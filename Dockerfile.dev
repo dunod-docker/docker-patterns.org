@@ -1,0 +1,28 @@
+FROM centos:7
+MAINTAINER Thomas Garlot "thomas.garlot@gmail.com"
+
+RUN yum install -y epel-release && \
+    yum update -y && \
+    yum install -y python-pygments git ca-certificates tar curl openssl && \
+    yum clean all
+
+ENV HUGO_VERSION 0.16
+ENV HUGO_BINARY hugo_${HUGO_VERSION}_linux-64bit.tgz
+
+RUN curl -OL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
+    tar xvfz ${HUGO_BINARY} && \
+    mv hugo /usr/local/bin && \
+    chmod a+x /usr/local/bin/hugo && \
+    rm ${HUGO_BINARY}
+
+VOLUME ["/data/site"]
+
+EXPOSE 8081
+
+WORKDIR /data/site
+
+#RUN useradd -p $(openssl passwd -1 hugo) hugo && usermod -u 1000 hugo
+#USER hugo
+
+ENTRYPOINT ["/usr/local/bin/hugo"]
+CMD ["server","--watch=true","--verbose=true","--destination=/data/site/public","--port=8081","--baseURL=http://localhost","--bind=0.0.0.0"]
