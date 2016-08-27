@@ -1,53 +1,86 @@
 baseurl = "http://localhost"
-languageCode = "en-us"
+languageCode = "fr-fr"
 title = "Docker Patterns"
-theme = "hugo-material-docs-master"
+theme = "hugo-future-imperfect-master"
+tag = "tags"
+category = "chapitres"
+
+preserveTaxonomyNames = true
+paginate = 3
+disqusShortname = "shortname"
+googleAnalytics = ""
 
 [params]
-	# General information
-	author = "Thomas Garlot"
-	copyright = "Licence MIT"
+	# Sets the meta tag description, usually reserved for the main page
+	description          = "Docker "
+	# This will appear on the top left of the navigation bar
+	navbarTitle          = "Docker patterns"
+	# Social media buttons that appear on the sidebar
+	socialAppearAtTop    = true
+	socialAppearAtBottom = true
+	# set this to the section name if section is not post
+	# viewMorePostLink     = "/blog/"
+  # Optional Params
+	categoriesByCount    = true
+	includeReadingTime   = true
+	# The set of favicons used are based on the write-up from this link:
+	# https://github.com/audreyr/favicon-cheat-sheet
+	# Please see the favicon partial template for more information
+	loadFavicon          = false
+	faviconVersion       = ""
 
-	# Repository
-	# provider = "GitHub"
-	# repo_url = "https://github.com/tgarlot/docker-patterns-site"
+  # Load custom CSS or JavaScript files. This replaces the deprecated params
+	# minifiedFilesCSS and minifiedFilesJS. The variable is an array so that you
+	# can load multiple files if necessary. You can also load the standard theme
+	# files by adding the value, "default".
+	# customCSS            = ["default", "/path/to/file"]
+	# customJS             = ["default", "/path/to/file"]
 
-	version = "1.0.0"
-	logo = "images/logo.png"
-	favicon = ""
+# parms.intro will appear on the sidebar
+# This is optional, but it's suggested to use
+[params.intro]
+	header    = "Docker"
+  paragraph = "Pratique des architectures à base de conteneurs"
+  # about     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
 
-	permalink = "#"
+	# This will also appear on the sidebar.
+	# A width of less than 100px is recommended
+	# This is optional
+	[params.intro.pic]
+	    # src       = "/img/main/logo.jpg"
+	    # modify your picture in the shape of a circle or
+	    # future imperfect's hexagonal shape
+	    # circle    = false
+	    # imperfect = true
+	    # width     = ""
+	    # alt       = "Hugo Future Imperfect"
 
-	# Custom assets
-	custom_css = []
-	custom_js  = []
+	# Adjust the amount of recent posts on the sidebar.
+	# This is optional. The default value 5 will be used
+	[params.postAmount]
+	    sidebar = 2
 
-	# Syntax highlighting theme
-	highlight_css  = ""
-
-[params.palette]
-    	primary = "orange"
-    	accent  = "light green"
-
-[params.font]
-    	text = "Ubuntu"
-    	code = "Ubuntu Mono"
-
-[social]
-	github  = "tgarlot"
+	# Set up your menu items in the navigation bar
+	# You can use identifier to prepend a font awesome icon to your text
+#	[[menu.main]]
+#	    name = "Blog"
+#	    url = "/blog"
+#	    identifier = "fa fa-newspaper-o"
+#	    weight = 1
 
 [[menu.main]]
-	name   = "Getting started"
-	url    = "getting-started/"
-	weight = 0
+	    name = "Categories"
+	    url = "/categories"
+	    weight = 2
 
-[[menu.main]]
-	name   = "Rajouter du contenu"
-	url    = "adding-content/"
-	weight = 20
+#	[[menu.main]]
+#	    name = "About"
+#	    url = "/about"
+#	    weight = 3
 
-[blackfriday]
-	smartypants	= true
-	fractions = true
-	smartDashes = true
-	plainIDAnchors = true
+	# Insert your username and the icon will apear on the page as long as
+	# socialAppearAtTop or socialAppearAtBottom is set to true in the params area
+	# The social media icons will appear on the sidebar
+	[social]
+	    github          = "dunod-docker"
+	    email           = ""
