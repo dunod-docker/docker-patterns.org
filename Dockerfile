@@ -17,7 +17,7 @@ RUN curl -OL https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${
 
 RUN mkdir -p /data && cd /data &&  \
     git init &&  \
-    git remote add -f origin https://github.com/dunod-docker/dunod-patterns &&  \
+    git remote add -f origin https://github.com/dunod-docker/docker-patterns.org &&  \
     git config core.sparseCheckout true &&  \
     echo "site/" >> .git/info/sparse-checkout &&  \
     git pull origin master
