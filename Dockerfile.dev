@@ -25,4 +25,4 @@ WORKDIR /data/site
 #USER hugo
 
 ENTRYPOINT ["/usr/local/bin/hugo"]
-CMD ["server","--watch=true","--verbose=true","--destination=/data/site/public","--port=8081","--baseURL=http://localhost","--bind=0.0.0.0"]
+CMD ["server","--watch=true","--verbose=true","--destination=/data/site/public","--port=8081","--baseURL=http://localhost:8081","--bind=0.0.0.0"]
