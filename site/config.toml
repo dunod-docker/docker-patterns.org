@@ -3,7 +3,7 @@ languageCode = "fr-fr"
 title = "Docker Patterns"
 theme = "hugo-future-imperfect-master"
 tag = "tags"
-category = "chapitres"
+categorie = "categories"
 
 preserveTaxonomyNames = true
 paginate = 3
@@ -71,7 +71,7 @@ googleAnalytics = ""
 [[menu.main]]
 	    name = "Categories"
 	    url = "/categories"
-	    weight = 2
+	    weight = 1
 
 #	[[menu.main]]
 #	    name = "About"
