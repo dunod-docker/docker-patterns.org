@@ -64,7 +64,7 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
                                 {{ if .Site.Params.orderByPublishDate }}
                                     {{ $.Scratch.Set "dateType" .PublishDate }}
                                 {{ else }}
