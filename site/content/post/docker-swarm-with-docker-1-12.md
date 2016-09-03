@@ -1,8 +1,8 @@
 +++
 date = "2016-08-28T15:24:18Z"
-title = "Docker Swarm with Docker 1.12 - Partie 1"
+title = "Docker Swarm avec Docker 1.12 - Partie 1"
 author = "Thomas Garlot"
-tags = [ "Docker Swarm", "Chapitre 11"]
+tags = [ "Docker Swarm", "Chapitre 11", "Docker 1.12"]
 categories = [ "Livre" ]
 +++
 
@@ -79,6 +79,8 @@ time="2016-08-31T05:32:25.730119651Z" level=debug msg="2016/08/31 05:32:25 [DEBU
 time="2016-08-31T05:32:31.784696404Z" level=debug msg="2016/08/31 05:32:31 [DEBUG] memberlist: TCP connection from=192.168.99.102:45984\n"
 time="2016-08-31T05:32:31.785175172Z" level=debug msg="node-01: Initiating bulk sync for networks [7hlr74rtdldopgf0hvc17bl7c] with node node-02"
 </code></pre>
+
+> Attention, pour avoir un cluster Swarm à haute disponibilité, il faut au moins {{< url-link "3 Swarm Master " "https://docs.docker.com/engine/swarm/admin_guide/#/add-manager-nodes-for-fault-tolerance" >}}!!
 
 Nous pouvons maintenant rajouter nos 2 derniers noeuds Worker:
 
