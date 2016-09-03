@@ -19,6 +19,18 @@
                     <p>{{ .paragraph | safeHTML }}</p>
                 </header>
             {{ end }}
+            <div style="float:left; display:inline-block; ">
+            	<span style="float:left;width: 50%;">
+            		<figure>
+            			<img src="/book.jpg"  height="200" />
+    				</figure>
+    			</span>
+
+				<span style="vertical-align: top;  float:right;width: 50%;">
+    			<p>Disponible sur <a href="http://www.dunod.com/informatique-multimedia/developpement/developpement-web/docker">Dunod.com</a> et <a href="https://www.amazon.fr/Docker-Pratique-architectures-base-conteneurs/dp/2100747444/ref=sr_1_4?ie=UTF8">Amazon.fr</a></p>
+    			</span>
+    		</div>
+
             <ul class="icons">
                 {{ if .RSSLink }}
                     <li><a href="{{ .RSSLink }}" type="application/rss+xml"
