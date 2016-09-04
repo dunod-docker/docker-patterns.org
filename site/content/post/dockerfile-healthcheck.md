@@ -27,7 +27,7 @@ Il contient simplement:
 
 * app.py: un fichier "Hello World" basé sur le framework [Flask](http://flask.pocoo.org/)
 * requirements.txt: spécifie la version de Flask à utiliser
-* Dockerfile: ce dernier ne fait qu'installer Python et pip, copier les 2 fichiers app.py et requirements.txt, et exposer l'application sur le port 5000. 
+* Dockerfile: ce dernier ne fait qu'installer Python et pip, copier les 2 fichiers app.py et requirements.txt, et exposer l'application sur le port 5000.
 
 
 <pre><code class="dockerfile">FROM centos:7
@@ -54,7 +54,7 @@ CMD [ "app.py" ]
 
 Et bien sur, nous avons notre nouvelle directive HEALTHCHECK. Nous définissons l'interval entre 2 checks (10s, 30s par défaut) ainsi que le nombre de tentatives (2, 3 par défaut) qui doivent échouer pour considérer que notre container n'est plus "healthy". Nous aurions aussi pu spécifier un 3ème paramêtre *--timeout* qui comme son nom l'indique, considère que le check est négatif si la commande met plus de 30 secondes (valeur par défaut) pour s'éxécuter.
 
-Notre healthcheck est décrit après *CMD*, dans notre cas, <code class="bash">curl -f http://localhost:5000/ || exit 1</code>. Docker accepte soit une commande shell soit une commande en mode "éxécution". Dans notre cas, nous mettons directement une commande shell sachant que nous aurions tout aussi bien pu référencer un fichier *.sh. 
+Notre healthcheck est décrit après *CMD*, dans notre cas, <code class="bash">curl -f http://localhost:5000/ || exit 1</code>. Docker accepte soit une commande shell soit une commande en mode "éxécution". Dans notre cas, nous mettons directement une commande shell sachant que nous aurions tout aussi bien pu référencer un fichier *.sh.
 
 Construisons et démarrons notre container:
 
@@ -84,14 +84,9 @@ $ exit
 </code></pre>
 
 Si nous attendons quelques secondes, notre conteneur est maintenant "unhealthy":
-<pre><code class="dockerfile">$ docker ps
+<pre><code class="bash">$ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED          STATUS                  PORTS                    NAMES
 37b7f72fa9d6        flask               "python app.py"          1 hour ago       Up 1 hour (unhealthy)   0.0.0.0:5000->5000/tcp   flask
 </code></pre>
 
 Grâce à la nouvelle directive HEALTHCHECK, il est maintenant possible de savoir facilement si le conteneur fournit son service. Il est conseillé d'avoir des checks de "haut niveau" tel une URL HTTP qui vérifie que l'application packagée dans le conteneur fournit effectivement son service.
-
-
-
-
-
