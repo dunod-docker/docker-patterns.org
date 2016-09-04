@@ -58,7 +58,7 @@ Notre healthcheck est décrit après *CMD*, dans notre cas, <code class="bash">c
 
 Construisons et démarrons notre container:
 
-<pre><code class="dockerfile">$ docker build -t flask .
+<pre><code class="bash">$ docker build -t flask .
 $ docker run -d -p 5000:5000 --name flask flask
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                            PORTS                    NAMES
@@ -66,13 +66,13 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 </code></pre>
 
 Le status de notre container est tout d'abord **health: starting** puis après quelques secondes (le temps que le premier check est passé), passe à **healthy**. Nous pouvons aussi le voir simplement avec la commande:
-<pre><code class="dockerfile">$ docker inspect --format='{{json .State.Health.Status}}' flask
+<pre><code class="bash">$ docker inspect --format='{{json .State.Health.Status}}' flask
 "healthy"
 </code></pre>
 
 Pour voir ce qu'il se passe quand notre application a un problème, nous allons tout simplement en simuer un! Pour cela, nous allons la modifier pour qu'elle renvoie un statut HTTP 500, qui fera échoué notre check.
 
-<pre><code class="dockerfile">$ docker exec -it flask /bin/bash
+<pre><code class="bash">$ docker exec -it flask /bin/bash
 [root@37b7f72fa9d6 app]# vi app.py
 
 @app.route('/')
