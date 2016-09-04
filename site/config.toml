@@ -4,6 +4,7 @@ title = "Docker Patterns"
 theme = "hugo-future-imperfect-master"
 tag = "tags"
 categorie = "categories"
+googleAnalytics = "UA-83634681-1"
 
 preserveTaxonomyNames = true
 paginate = 3
