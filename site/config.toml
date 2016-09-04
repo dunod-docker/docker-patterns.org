@@ -8,7 +8,7 @@ googleAnalytics = "UA-83634681-1"
 
 preserveTaxonomyNames = true
 paginate = 3
-disqusShortname = "docker-patterns"
+# disqusShortname = "docker-patterns"
 
 [params]
 	# Sets the meta tag description, usually reserved for the main page
