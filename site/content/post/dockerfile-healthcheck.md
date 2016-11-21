@@ -12,7 +12,7 @@ En effet, avec le nouveau mode Swarm, un *docker ps* n'est plus suffisant: si le
 
 l'instruction HEALTHCHECK permet de spécifier une commande qui permettra de savoir si le conteneur peut "traiter des demandes". Regardons cela de manière concrète.
 
-Récupérez tout d'avoir le dépot Github qui contient les fichiers nécessaire
+Récupérez tout d'avoir le dépot Github qui contient les fichiers nécessaires
 
 <pre><code class="bash">$ git clone https://github.com/dunod-docker/docker-healthcheck.git
 $ cd docker-healthcheck/
