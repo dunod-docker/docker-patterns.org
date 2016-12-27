@@ -24,7 +24,7 @@ Commençons par regarder la configuration de nos différentes machines virtuelle
 
 # Notre fichier Vagrant
 
-Tout d'abord, nous créeons nos VMs "swarm worker". Nous utilisons simplement une boucle pour créer 3 VMS swarm-worker-01, swarm-worker-02 et swarm-worker-03.
+Tout d'abord, nous allons créer nos VMs "swarm worker". Nous utilisons simplement une boucle pour créer 3 VMS swarm-worker-01, swarm-worker-02 et swarm-worker-03.
 
 <pre><code class="ruby">(1..3).each do |i|
   config.vm.define "swarm-worker-0#{i}" do |d|
@@ -50,11 +50,11 @@ Puis notre "swarm manager":
   end
 </code></pre>
 
-Rien de vraiment nouveau à l'exception des 2 lignes commençant par "d.vm.provision". C'est via ces 2 instructions que nous allons tout d'abord installer Ansible sur notre VM swarm-manager puis lancer ensuite la création de notre cluster Docker Swarm.
+Rien de vraiment compliqué à l'exception des 2 lignes commençant par "d.vm.provision". C'est via ces 2 instructions que nous allons tout d'abord installer Ansible sur notre VM swarm-manager puis lancer ensuite la création de notre cluster Docker Swarm.
 
 # Installation d'Ansible
 
-L'installation se fait simplement à l'aide du script bootstrap_ansible.sh: il installe le dépôt epel et Ansible et copie le ficher de configuration d'Ansible dans /etc/ansible.
+L'installation se fait simplement à l'aide du script bootstrap_ansible.sh: il installe le dépôt EPEL ainsi qu'Ansible et copie le ficher de configuration d'Ansible dans /etc/ansible.
 <pre><code class="bash">#!/bin/bash
 set -e
 echo "Installing Ansible..."
@@ -128,4 +128,4 @@ Maintenant que tout est prêt, il ne reste plus qu'a laisser Vagrant/Ansible tra
 <pre><code class="bash">$ vagrant up
 </code></pre>
 
-Au bout de quelques minutes, vous aurez 4 VMs configurées en cluster et prête à recevoir vos premiers services.
+Au bout de quelques minutes, vous aurez 4 VMs configurées en cluster et prêtes à recevoir nos premiers services.
