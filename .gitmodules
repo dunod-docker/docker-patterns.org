@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = https://github.com/dunod-docker/dunod-docker.github.io.git
+	branch = master
