@@ -1,6 +1,6 @@
 ---
 title: "Erratum Edition 2 - chapitre 8.2"
-date: 2020-03-08T17:31:21+01:00
+date: 2020-04-08T17:31:21+01:00
 draft: false
 ---
 
